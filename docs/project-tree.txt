@@ -1,0 +1,24 @@
+/my-react-app
+  ├── /public
+  │   └── index.html
+  ├── /src
+  │   ├── /components
+  │   │   ├── Dashboard.js
+  │   │   ├── Header.js
+  │   │   ├── Login.js
+  │   │   ├── Profile.js
+  │   │   ├── Signup.js
+  │   │   └── PrivateRoute.js
+  │   ├── /graphql
+  │   │   ├── client.js
+  │   │   ├── mutations.js
+  │   │   └── queries.js
+  │   ├── /pages
+  │   │   ├── Home.js
+  │   │   └── ProfilePage.js
+  │   ├── /styles
+  │   │   └── App.css
+  │   ├── App.js
+  │   ├── index.js
+  ├── .env
+  ├── package.json
