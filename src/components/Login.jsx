@@ -6,14 +6,15 @@ import { useNavigate, Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const [login] = useMutation(LOGIN_MUTATION);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted"); // Log form submission
-    console.log("Email:", email); // Log email
-    console.log("Password:", password); // Log password
+    console.log("Form submitted");
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     try {
       const { data } = await login({ variables: { email, password } });
@@ -23,6 +24,7 @@ const Login = () => {
       navigate("/dashboard");
     } catch (err) {
       console.error("Login failed", err);
+      setError(err.message);
     }
   };
 
@@ -31,6 +33,11 @@ const Login = () => {
       <div className="w-full max-w-md">
         <h2 className="text-3xl font-bold mb-4 text-center">Sign In</h2>
         <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg">
+          {error && (
+            <div className="mb-4 bg-red-500 text-white p-2 rounded">
+              {error}
+            </div>
+          )}{" "}
           <div className="mb-4">
             <label className="block mb-2">Email</label>
             <input

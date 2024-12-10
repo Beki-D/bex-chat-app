@@ -68,6 +68,7 @@ const Signup = () => {
               className="w-full p-2 rounded-md bg-gray-700 text-white"
             />
           </div>
+          {error && <div className="mb-4 text-red-500">{error}</div>}
           <button
             type="submit"
             className="w-full py-2 bg-blue-500 rounded-md hover:bg-blue-600"
