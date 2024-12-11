@@ -5,6 +5,43 @@ import { GET_CURRENT_USER, GET_MESSAGES } from "../graphql/queries";
 import { CREATE_MESSAGE } from "../graphql/mutations";
 import { clientAuth, clientHasura } from "../graphql/client.js";
 
+const getInitials = (name) => {
+  const initials = name
+    .split(" ")
+    .map((word) => word[0])
+    .join("");
+  return initials.toUpperCase();
+};
+
+const getRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const createAvatarFromInitials = (initials) => {
+  const canvas = document.createElement("canvas");
+  canvas.width = 40;
+  canvas.height = 40;
+  const context = canvas.getContext("2d");
+
+  const backgroundColor = getRandomColor();
+  const textColor = getRandomColor();
+
+  context.fillStyle = backgroundColor;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = textColor;
+  context.font = "bold 20px Arial";
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  context.fillText(initials, canvas.width / 2, canvas.height / 2);
+
+  return canvas.toDataURL();
+};
+
 const Chat = () => {
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
@@ -36,14 +73,16 @@ const Chat = () => {
   });
 
   const [userName, setUserName] = useState("Guest");
-  const [userAvatar, setUserAvatar] = useState(
-    "https://i.pravatar.cc/40?img=4"
-  );
+  const [userAvatar, setUserAvatar] = useState("");
 
   useEffect(() => {
     if (data?.me) {
       setUserName(data.me.name);
-      setUserAvatar(data.me.avatar || "https://i.pravatar.cc/40?img=4");
+
+      const initials = getInitials(data.me.name);
+      const avatarURL = createAvatarFromInitials(initials) || data.me.avatar;
+
+      setUserAvatar(avatarURL || "https://i.pravatar.cc/40?img=5");
     }
   }, [data]);
 
