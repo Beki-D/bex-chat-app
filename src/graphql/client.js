@@ -8,7 +8,7 @@ const HASURA_ADMIN_SECRET = process.env.REACT_APP_HASURA_ADMIN_SECRET;
 // HTTP Link for Auth Service (Login, Signup, etc.)
 const httpLinkAuth = new HttpLink({
   // uri: "http://localhost:5000/graphql",
-  uri: "http://my.subdomain.robibonconstruction.com/graphql",
+  uri: "https://my.subdomain.robibonconstruction.com/graphql",
   credentials: "include",
 });
 
