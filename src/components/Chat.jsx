@@ -180,7 +180,7 @@ const Chat = () => {
             </div>
           ))}
         </div>
-        <div className="fixed bottom-0 right-8 left-8 md:left-72 mb-2 p-4 bg-gray-100 bg-opacity-0 dark:bg-gray-800 flex items-center space-x-2 rounded-lg">
+        <div className="fixed bottom-0 right-4 left-4 md:left-72 mb-2 p-4 bg-gray-100 bg-opacity-0 dark:bg-gray-800 flex items-center space-x-2 rounded-lg">
           <input
             type="text"
             placeholder="Type a message..."
@@ -190,7 +190,7 @@ const Chat = () => {
           />
           <button
             onClick={handleSendMessage}
-            className="bg-blue-500 hover:bg-blue-400 dark:bg-slate-500 dark:hover:bg-slate-400 text-white p-2 rounded w-14"
+            className="bg-blue-500 hover:bg-blue-400 dark:bg-slate-500 dark:hover:bg-slate-400 text-white p-2 rounded"
           >
             Send
           </button>
