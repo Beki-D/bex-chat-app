@@ -8,9 +8,9 @@ const LandingPage = () => {
       {/* Background animation */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-[10px] opacity-30">
-          <div className="w-96 h-96 bg-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 left-1/3"></div>
-          <div className="w-96 h-96 bg-indigo-800 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 left-2/3"></div>
+          <div className="w-96 h-96 bg-gray-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div className="w-96 h-96 bg-blue-700 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 left-1/3"></div>
+          <div className="w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 left-2/3"></div>
         </div>
       </div>
 
@@ -18,8 +18,8 @@ const LandingPage = () => {
       <main className="flex-grow flex items-center justify-center py-16 relative z-10">
         <div className="text-center p-16">
           <div className="flex items-center justify-center mb-6">
-            <MessageCircle className="h-16 w-16 text-blue-400 animate-pulse mr-4" />
-            <h1 className="text-5xl sm:text-6xl font-bold leading-tight">
+            <MessageCircle className="h-10 w-10 sm:h-16 sm:w-16 text-blue-400 animate-pulse mr-1 sm:mr-2" />
+            <h1 className="text-[2.5rem] sm:text-6xl font-bold leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                 Bex Chat
               </span>
