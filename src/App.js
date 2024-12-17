@@ -10,6 +10,7 @@ import Chat from "./components/Chat";
 import Settings from "./components/Settings";
 import Notifications from "./components/Notifications";
 import AdminPanel from "./components/AdminPanel";
+import ExchangeRates from "./components/ExchangeRates";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route index element={<Navigate to="chat" />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="chat" element={<Chat />} />
+            <Route path="exchange-rates" element={<ExchangeRates />} />
             <Route path="settings" element={<Settings />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="admin" element={<AdminPanel />} />

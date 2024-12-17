@@ -7,6 +7,7 @@ import {
   Bell,
   LogOut,
   Users,
+  TrendingUp,
 } from "lucide-react";
 import { useQuery } from "@apollo/client";
 import { GET_CURRENT_USER } from "../graphql/queries";
@@ -53,6 +54,11 @@ const Dashboard = () => {
                 to: "/dashboard/settings",
                 icon: <Settings />,
                 label: "Settings",
+              },
+              {
+                to: "/dashboard/exchange-rates",
+                icon: <TrendingUp />,
+                label: "Exchange Rates",
               },
               {
                 to: "/dashboard/notifications",

@@ -46,3 +46,15 @@ export const GET_MESSAGES = gql`
     }
   }
 `;
+
+export const GET_EXCHANGE_RATES = gql`
+  query {
+    get_exchange_rates {
+      base
+      rates {
+        currency
+        rate
+      }
+    }
+  }
+`;
